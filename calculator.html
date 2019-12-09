@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+    .calc_border {
+        grid-template-columns: auto auto auto auto;
+        display: grid;        
+        height: 300px;
+        width: 270px;
+    }
+    .numbers {
+        background-color: rgb(130, 134, 130);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        font-size: 20px;
+        color: white;
+
+    }
+    .display {
+        background-color: rgb(83, 80, 80);
+        width: 268px;
+        height: 75px;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        font-size: 40px;
+        color: white;
+    }
+    
+    .operators {
+        background-color: orange;
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        font-size: 20px;
+        
+    }
+
+    .display .text {
+       padding: 15px 20px;
+    }
+    </style>
+    
+</head>
+<body>
+   
+        <div class = "display"><div id = "text" class = "text"></div></div>
+    <div class = calc_border>
+        <button type="button" class = "numbers" id = "superclear">AC</button>
+        <button type="button" class = "numbers" id = "whompwhomp">+|-</button>
+        <button type="button" class = "numbers" id = "percent">%</button>
+        <button type="button" class = "operators" id = "divide">/</button>
+        <button type="button" class = "numbers" id = "seven">7</button>
+        <button type="button" class = "numbers" id = "eight">8</button>
+        <button type="button" class = "numbers" id = "nine">9</button>
+        <button type="button" class = "operators" id = "multiply">x</button>
+        <button type="button" class = "numbers" id = "four">4</button>
+        <button type="button" class = "numbers" id = "five">5</button>
+        <button type="button" class = "numbers" id = "six">6</button>
+        <button type="button" class = "operators" id = "minus">-</button>
+        <button type="button" class = "numbers" id = "one">1</button>
+        <button type="button" class = "numbers" id = "two">2</button>
+        <button type="button" class = "numbers" id = "three">3</button>
+        <button type="button" class = "operators" id = "plus">+</button>
+        <button type="button" class = "numbers" id = "clear">Clr</button>
+        <button type="button" class = "numbers" id = "zero">0</button>
+        <button type="button" class = "numbers" id = "decimal">.</button>
+        <button type="button" class = "operators" id = "equals">=</button>
+    </div>
+    <script>
+    
+        let outputString = '';
+        let printer = document.querySelector("#text");
+    
+            function math_Stuff(event) {
+                id = event.target.id
+                if (id == 'one')
+                {
+                    outputString += '1';
+                }
+                else if (id == 'two')
+                {
+                    outputString += '2';
+                }
+                else if (id == 'three')
+                {
+                    outputString += '3';
+                }
+                else if (id == 'four')
+                {
+                    outputString += '4';
+                }
+                else if (id == 'five')
+                {
+                    outputString += '5';
+                }
+                else if (id == 'six')
+                {
+                    outputString += '6';
+                }
+                else if (id == 'seven')
+                {
+                    outputString += '7';
+                }
+                else if (id == 'eight')
+                {
+                    outputString += '8';
+                }
+                else if (id == 'nine')
+                {
+                    outputString += '9';
+                }
+                else if (id == 'zero')
+                {
+                    outputString += '0';
+                }
+                else if (id == 'plus')
+                {
+                    outputString += '+';
+                }
+                else if (id == 'minus')
+                {
+                    outputString += '-';
+                }
+                else if (id == 'multiply')
+                {
+                    outputString += '*';
+                }
+                else if (id == 'divide')
+                {
+                    outputString += '/';
+                }
+                else if (id == 'clear')
+                {
+                    outputString = '';
+                }
+                else if (id == 'percent')
+                {
+                    outputString += '%';
+                }
+                else if (id == 'superclear')
+                {
+                    outputString = '';
+                }
+                else if (id == 'whompwhomp')
+                {
+                    outputString = "me no workie";
+                }
+                console.log(outputString);
+                printer.innerHTML = outputString;
+            }
+
+            function pressEqual()
+            {
+                outputString = eval(outputString);
+                console.log(outputString);
+                printer.innerHTML = outputString;
+            }
+            
+            one.addEventListener('click', math_Stuff);
+            two.addEventListener('click', math_Stuff);
+            three.addEventListener('click', math_Stuff);
+            four.addEventListener('click', math_Stuff);
+            five.addEventListener('click', math_Stuff);
+            six.addEventListener('click', math_Stuff);
+            seven.addEventListener('click', math_Stuff);
+            eight.addEventListener('click', math_Stuff);
+            nine.addEventListener('click', math_Stuff);
+            zero.addEventListener('click', math_Stuff);
+            plus.addEventListener('click', math_Stuff);
+            equals.addEventListener('click', pressEqual);
+            minus.addEventListener('click', math_Stuff);
+            multiply.addEventListener('click', math_Stuff);
+            divide.addEventListener('click', math_Stuff);
+            clear.addEventListener('click', math_Stuff);
+            percent.addEventListener('click', math_Stuff);
+            superclear.addEventListener('click', math_Stuff);
+            whompwhomp.addEventListener('click', math_Stuff);
+
+
+
+        </script>
+</body>
+</html>
